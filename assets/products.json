@@ -1,0 +1,102 @@
+[
+	{
+		"id": 1,
+		"title": "T-shirt",
+		"description": "Customized t-shirt",
+		"price": 12.34,
+		"thumbnail": "https://source.unsplash.com/120x80/?sig=123",
+		"code": "abc123",
+		"stock": 12,
+		"status": true
+	},
+	{
+		"id": 2,
+		"title": "Socks",
+		"description": "classic socks",
+		"price": 12.34,
+		"thumbnail": "https://source.unsplash.com/120x80/?sig=124",
+		"code": "bcd234",
+		"stock": 23,
+		"status": true
+	},
+	{
+		"id": 3,
+		"title": "Sport Shoes updated by API",
+		"description": "Adidas UltraBoost light",
+		"price": 23.45,
+		"thumbnail": "https://source.unsplash.com/120x80/?sig=125",
+		"code": "cde345",
+		"stock": 45,
+		"status": true
+	},
+	{
+		"id": 4,
+		"title": "Trail running Shoes",
+		"description": "Adidas Terrex Extreme",
+		"price": 11.45,
+		"thumbnail": "https://source.unsplash.com/120x80/?sig=126",
+		"code": "def456",
+		"stock": 30,
+		"status": true
+	},
+	{
+		"id": 5,
+		"title": "Ski jacket",
+		"description": "Blackdays Ski",
+		"price": 26.33,
+		"thumbnail": "https://source.unsplash.com/120x80/?sig=133",
+		"code": "efg567",
+		"stock": 14,
+		"status": true
+	},
+	{
+		"id": 6,
+		"title": "Rain cover",
+		"description": "Under Armour rain cover",
+		"price": 24.34,
+		"thumbnail": "https://source.unsplash.com/120x80/?sig=134",
+		"code": "fgh678",
+		"stock": 15,
+		"status": true
+	},
+	{
+		"id": 7,
+		"title": "Smart Hat",
+		"description": "Fashionist black smart hat",
+		"price": 26.33,
+		"thumbnail": "https://source.unsplash.com/120x80/?sig=135",
+		"code": "efg567",
+		"stock": 14,
+		"status": true
+	},
+	{
+		"id": 8,
+		"title": "Large skirt",
+		"description": "Gray large skirt",
+		"price": 26.33,
+		"thumbnail": "https://source.unsplash.com/120x80/?sig=136",
+		"code": "efg567",
+		"stock": 14,
+		"status": true
+	},
+	{
+		"id": 9,
+		"title": "Blue Sky shirt",
+		"description": "Flowered shirt",
+		"price": 26.33,
+		"thumbnail": "https://source.unsplash.com/120x80/?sig=141",
+		"code": "efg567",
+		"stock": 14,
+		"status": true
+	},
+	{
+		"id": 10,
+		"title": "New Balance shoes",
+		"description": "New Balance Sport Running Shoes",
+		"price": 26.33,
+		"thumbnail": "https://source.unsplash.com/120x80/?sig=142",
+		"code": "efg567",
+		"stock": 14,
+		"status": true
+	}
+]

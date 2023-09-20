@@ -1,0 +1,21 @@
+<header>
+    <h1>Lista de Productos</h1>
+</header>
+
+<main class="product-list">
+    {{#each products}}
+        <div class="product">
+            <img src="{{thumbnail}}" alt="{{title}}">
+            <h2>ID: {{id}} | {{title}}</h2>
+            <p class="description">{{description}}</p>
+            <p class="price">$ {{price}}</p>
+            <p class="code">Código: {{code}}</p>
+            <p class="stock">Stock: {{stock}}</p>
+        </div>
+    {{/each}}
+</main>
+
+<footer>
+    <p>&copy; 2023 Tu Tienda Online</p>
+</footer>
+<script src="/js/home.js"></script>
