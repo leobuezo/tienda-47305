@@ -1,9 +1,9 @@
 import {Router} from 'express';
-import ProductManager from '../ProductManager.js';
+import ProductsManager from '../persistence/files/ProductsManagerFiles.js';
 
 const router = Router();
 
-const pm = new ProductManager('assets/products.json');
+const pm = new ProductsManager('assets/products.json');
 
 // middleware de endpoint
 const userRole = 'admin';

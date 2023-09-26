@@ -1,22 +1,68 @@
 <header>
-    <h1>Lista de Productos en tiempo real con websockets</h1>
+    <h1>Real Time Products</h1>
+    <a class="waves-effect waves-light btn" id="addProductForm">Add Product</a>
 </header>
 
-<main class="product-list" id="rtmProducts">
-    {{#each products}}
-        <div class="product">
-            <img src="{{thumbnail}}" alt="{{title}}">
-            <h2>ID: {{id}} | {{title}}</h2>
-            <p class="description">{{description}}</p>
-            <p class="price">$ {{price}}</p>
-            <p class="code">Código: {{code}}</p>
-            <p class="stock">Stock: {{stock}}</p>
-        </div>
-    {{/each}}
+<main class="product-list" id="productsList">
+
 </main>
 
 <footer>
     <p>&copy; 2023 Tu Tienda Online</p>
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.0.18/sweetalert2.all.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
-<script src="/js/home.js"></script>
+
+    <script>
+        document.getElementById('addProductForm').addEventListener('click', () => {
+            Swal.fire({
+                title: 'Ingresa tu Nombre y Apellido',
+                html: `
+                    <form id="editForm">
+                        <input type="text" id="title" name="title" required value="{{product.title}}">
+                        <label for="title">Título:</label>
+                        
+                        <input type="text" id="description" name="description" required value="{{product.description}}">
+                        <label for="description">Descripción:</label>
+                        
+                        <input type="number" id="price" name="price" step="1.00" required value="{{product.price}}">
+                        <label for="price">Precio:</label>
+                        
+                        <input type="url" id="thumbnail" name="thumbnail" required value="{{product.thumbnail}}">
+                        <label for="thumbnail">Enlace de la Imagen:</label>
+                        
+                        <input type="text" id="code" name="code" required value="{{product.code}}">
+                        <label for="code">Código:</label>
+                        
+                        <input type="number" id="stock" name="stock" required value="{{product.stock}}">
+                        <label for="stock">Stock:</label>
+                    </form>`,
+                showCancelButton: true,
+                confirmButtonText: 'Send',
+                cancelButtonText: 'Cancel',
+                preConfirm: () => {
+                    const title = Swal.getPopup().querySelector('#title').value;
+                    const description = Swal.getPopup().querySelector('#description').value;
+                    const price = Swal.getPopup().querySelector('#price').value;
+                    const thumbnail = Swal.getPopup().querySelector('#thumbnail').value;
+                    const code = Swal.getPopup().querySelector('#code').value;
+                    const stock = Swal.getPopup().querySelector('#stock').value;
+
+                    if (!title || !description || !price || !thumbnail || !code || !stock) {
+                        Swal.showValidationMessage('Please, complete all the fields');
+                    }
+
+                    return { title, description, price, thumbnail, code, stock };
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const socket = io(); // Crea una instancia de Socket.IO
+                    console.log('result', result.value);
+                    socket.emit('productAdded', result.value);
+                }
+            });
+        });
+    </script>
+
+<script src="/js/realtime.js"></script>
